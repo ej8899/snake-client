@@ -8,3 +8,4 @@ const connect = require("./client.js");
 console.log("Connecting ...");
 connect.connect();
 
+// connect.conn.write("Name: EJz");

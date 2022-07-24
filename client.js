@@ -9,7 +9,7 @@ const connects = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-
+  conn.write("Name: EJz");
   return conn;
 };
 
