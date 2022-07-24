@@ -9,7 +9,17 @@ const connects = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+
+  // TELL Client we're connected
+  conn.on("data", (data) => {
+    console.log("Server says: ", data);
+  });
+
+  // send our initials to the snake server
   conn.write("Name: EJz");
+  // conn.write("Move: down");
+ 
+
   return conn;
 };
 

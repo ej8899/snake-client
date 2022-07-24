@@ -9,3 +9,5 @@ console.log("Connecting ...");
 connect.connect();
 
 // connect.conn.write("Name: EJz");
+
+// "Move: up"
