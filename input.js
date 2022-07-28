@@ -4,6 +4,10 @@ const globalFns = require("./globalfn.js");
 
 // SCORING variable
 let directionChanges = 0;
+
+//
+// start the input polling
+//
 const setupInput = function(conn) {
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -14,7 +18,9 @@ const setupInput = function(conn) {
   const initialSnakeSpeed = 200;  // this is in milliseconds
   let snakeSpeed = initialSnakeSpeed; // this is in milliseconds
 
-  //  stdin.on('data', function handleUserInput(keyPress) {
+  //
+  // monitor snake controls
+  //
   stdin.on('data', (keyPress) => {
     // SYNC movement counting to our global variables
     globalVars.directionsCounter = directionChanges;
