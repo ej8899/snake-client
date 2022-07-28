@@ -15,6 +15,9 @@ console.log(globalVars.conColors.conColorReset);
 
 globalVars.gameStartTimeInSeconds = globalVars.setGameStartTime(); // start the clock on our game
 
+//
+// Get the game started - network connection & controller parsing
+//
 let conn = connect();
 setupInput(conn);
 
