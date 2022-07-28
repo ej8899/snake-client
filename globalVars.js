@@ -1,8 +1,11 @@
+//
+// Setup global variables
+//
 const directionsCounter = 0;
 let secondsPlayed = 0;
 let gameStartTimeInSeconds = 0;
 let gameEndTimeInSeconds = 0;
-conColors = { 
+let conColors = { 
   conColorCyan:     "\x1b[36m", 
   conColorRed:      '\x1b[91m', 
   conColorGreen:    '\x1b[92m',
@@ -15,6 +18,7 @@ conColors = {
 }
 
 //
+//  Setup Global Functions
 // ! QUESTION - why can't I set the globalVars in this file from outside this file via these functions?
 //
 const setGameStartTime = () => {
@@ -27,7 +31,6 @@ const setGameEndTime = () => {
   return (Math.floor(date.getTime() / 1000));
 };
 
-//setup FN to set the gameStartTimeInSeconds and gameEndTimeinSeconds
 
 module.exports = {
   directionsCounter,

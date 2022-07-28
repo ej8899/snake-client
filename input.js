@@ -17,7 +17,7 @@ const setupInput = function (conn) {
     //
     // MOVEMENT and MAIN CONTROL 
     //
-    if (keyPress === '\u0003') { // ctrl-c to exit
+    if (keyPress === '\u0003' || keyPress === '\u0078') { // ctrl-c or x to exit
       console.log("later!");
       console.log("You changed direction " + directionChanges + " times!");
       
@@ -50,7 +50,10 @@ const setupInput = function (conn) {
       conn.write('Say: ARRRRGGGHH!');
     }
     if (keyPress === '\u0032') {  // 2
-      conn.write('Say: Don\'t step on snek!');
+      conn.write('Say: No step on snek!');
+    }
+    if (keyPress === '\u0033') {  // 2
+      conn.write('Say: Keep calm & snake on!');
     }
   });
   stdin.resume();

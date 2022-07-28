@@ -4,7 +4,7 @@ const globalVars = require("./globalVars.js");
 
 
 console.clear();
-console.log(globalVars.conColors.conColorBright + "Welcome to..." + globalVars.conColors.conColorGreen);
+console.log(globalVars.conColors.conColorDim + "Welcome to..." + globalVars.conColors.conColorReset + globalVars.conColors.conColorGreen);
 
 let conn = connect();
 
@@ -24,5 +24,4 @@ setupInput(conn);
 
 
 // !TODO:  keep the snake moving after each keypress until the next keypress
-// !TODO:  bring our STYLE library as in INCLUDE and dress up the play.js output
 // !TODO:  if directions changed are 0 tell the user they didn't even play - show the instructions
