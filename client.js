@@ -26,6 +26,7 @@ const connect = function() {
     host: globalVars.host,
     port: globalVars.port,
   });
+  // graceful processing of any connection error
   conn.on('error', (errorCode) => {
     console.log(`${globalVars.conColors.conColorRed}  GAME START ERROR: ${globalVars.conColors.conColorCyan}${errorCode}${globalVars.conColors.conColorReset}`);
     console.log(`${globalVars.conColors.conColorDim}     (did you forget to start the game server, perhaps?)\n${globalVars.conColors.conColorReset}`);
@@ -41,18 +42,18 @@ const connect = function() {
   conn.on("connect", showInstructions);
 
   //
-  // Monitor INCOMMING DATA stream
+  // Monitor INCOMING DATA stream from server
   //
   conn.on("data", (data) => {
     //
     // Is the user "ded"
     //
-    if (data.search("ded") > 0) { // let's force program to exit if user is not actively playing
-      if (globalVars.directionsCounter === 0) {
+    if (data.search("ded") > 0) { // user is "ded" - lets figure out why
+      if (globalVars.directionsCounter === 0) { // user is not actively playing & never started to play
         console.log(`   ${globalVars.conColors.conColorRed}Did you fall asleep with Snek?  You didn't move at all!${globalVars.conColors.conColorReset}`);
       } else {
         console.log(`             ${globalVars.conColors.conColorRed}* * *  G A M E  O V E R  * * *${globalVars.conColors.conColorReset}`);
-        if (data.search("idled") > 0) {
+        if (data.search("idled") > 0) {  // not playing now, but has been playing
           console.log("                 You stopped playing!\n");
         } else {
           console.log("                      You CRASHED!\n");
@@ -64,6 +65,7 @@ const connect = function() {
       console.log();
       process.exit();
     } else {
+      // game server is sending messages, so let's show these to user
       console.log(globalVars.conColors.conColorCyan + "\tMessage: " + globalVars.conColors.conColorGreen + data + globalVars.conColors.conColorReset); // unknown message so just show it
     }
   });
@@ -74,8 +76,6 @@ const connect = function() {
 
   return conn;
 };
-
-
 
 module.exports = {
   connect
