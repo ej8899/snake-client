@@ -36,12 +36,16 @@ const setupInput = function (conn) {
     }
 
     //
-    // actual movements
+    // increase difficulty as game progresses
     //
     snakeSpeed = initialSnakeSpeed - (directionChanges); // the more you move, the faster snake gets
     if(snakeSpeed < 25) { // cap the speed difficulty at 25 milliseconds
       snakeSpeed = 25;
     }
+
+    //
+    // actual movements
+    //
     if (keyPress === '\u0061' ) {  // 'a'
       clearInterval(movementInterval);  // new keypress, so clear prior movement interval
       movementInterval = setInterval(function() { conn.write('Move: left'); }, snakeSpeed);

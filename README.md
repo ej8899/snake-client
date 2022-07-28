@@ -25,4 +25,4 @@ Before you can run this client, you will need to be running the server side whic
 - fancy intro with ASCII art
 - trap generic server game over messages & re-phrase
 - automatic snake movement after first keypress - no stopping it now!
-- 
+- every time you change snake's direction, it gets faster!

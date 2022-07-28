@@ -20,5 +20,5 @@ setupInput(conn);
 
 
 // !TODO:  error check if missing REQUIRES instead of messy exit
-// !TODO:  speed up snake after every direction changed
 // !TODO:  does snake server kick back a message after each item is eaten?? If so, add this to scoring!
+// !TODO:  report final snake speed on game over
