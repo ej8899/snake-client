@@ -11,7 +11,8 @@ const setupInput = function (conn) {
   connection = conn;
   
   let movementInterval = setInterval(function() {  }, 1); // just initialize with empty function
-  let snakeSpeed = 200;  // this is in milliseconds
+  const initialSnakeSpeed=200;  // this is in milliseconds
+  let snakeSpeed = initialSnakeSpeed; // this is in milliseconds 
 
   stdin.on('data', function handleUserInput(keyPress) {
     
@@ -22,6 +23,9 @@ const setupInput = function (conn) {
     // MOVEMENT and MAIN CONTROL 
     //
     
+    //
+    // Deal with a graceful exit & give user their score details
+    //
     if (keyPress === '\u0003' || keyPress === '\u0078') { // ctrl-c or x to exit
       console.log("later!");
       console.log("You changed direction " + directionChanges + " times!");
@@ -29,6 +33,14 @@ const setupInput = function (conn) {
       let secondsplaying = globalVars.setGameEndTime() - globalVars.gameStartTimeInSeconds;
       console.log("You lasted " + secondsplaying + " seconds!");
       process.exit();
+    }
+
+    //
+    // actual movements
+    //
+    snakeSpeed = initialSnakeSpeed - (directionChanges); // the more you move, the faster snake gets
+    if(snakeSpeed < 25) { // cap the speed difficulty at 25 milliseconds
+      snakeSpeed = 25;
     }
     if (keyPress === '\u0061' ) {  // 'a'
       clearInterval(movementInterval);  // new keypress, so clear prior movement interval

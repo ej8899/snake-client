@@ -13,13 +13,12 @@ console.log (` .----)   |   |  |\\   | /  _____  \\ |  .  \\  |  |____  ${global
 console.log (` |_______/    |__| \\__| __/     \\__\\ __|\\__\\ |_______| ${globalVars.conColors.conColorRed}(__)${globalVars.conColors.conColorGreen} `);
 console.log(globalVars.conColors.conColorReset);
 
-
 globalVars.gameStartTimeInSeconds = globalVars.setGameStartTime(); // start the clock on our game
 
 let conn = connect();
-
 setupInput(conn);
 
 
-// !TODO:  error grab if snake server isn't running
-// !TODO:  keep the snake moving after each keypress until the next keypress
+// !TODO:  error check if missing REQUIRES instead of messy exit
+// !TODO:  speed up snake after every direction changed
+// !TODO:  does snake server kick back a message after each item is eaten?? If so, add this to scoring!

@@ -1,7 +1,9 @@
 //
 // Setup global variables
 //
+const host = "localhost", port = 50541;
 const directionsCounter = 0;
+let userName = 'sNk';
 let secondsPlayed = 0;
 let gameStartTimeInSeconds = 0;
 let gameEndTimeInSeconds = 0;
@@ -33,6 +35,9 @@ const setGameEndTime = () => {
 
 
 module.exports = {
+  host,
+  port,
+  userName,
   directionsCounter,
   secondsPlayed,
   gameStartTimeInSeconds,

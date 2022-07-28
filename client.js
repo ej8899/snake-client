@@ -10,8 +10,8 @@ const globalVars = require("./globalVars.js");
 //
 const connect = function () {
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541
+    host: globalVars.host,
+    port: globalVars.port,
   });
   conn.on('error', (errorCode) => {
     console.log(`${globalVars.conColors.conColorRed}  GAME START ERROR: ${globalVars.conColors.conColorCyan}${errorCode}${globalVars.conColors.conColorReset}`);
@@ -51,12 +51,13 @@ const connect = function () {
       console.log();
       process.exit();
     } else {
-      console.log(globalVars.conColors.conColorCyan + "Message: " + globalVars.conColors.conColorGreen + data + globalVars.conColors.conColorReset); // unknown message so just show it
+      console.log(globalVars.conColors.conColorCyan + "\tMessage: " + globalVars.conColors.conColorGreen + data + globalVars.conColors.conColorReset); // unknown message so just show it
     }
 });
   
   // send our initials to the snake server
-  conn.write("Name: sNk");
+  let setupName = 'Name: ' + globalVars.userName;
+  conn.write(setupName);
 
   return conn;
 };
