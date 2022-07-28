@@ -24,3 +24,5 @@ Before you can run this client, you will need to be running the server side whic
 - "score" counter (number of direction changes made)
 - fancy intro with ASCII art
 - trap generic server game over messages & re-phrase
+- automatic snake movement after first keypress - no stopping it now!
+- 
