@@ -70,7 +70,7 @@ const connect = function() {
     }
   });
   
-  // send our initials to the snake server
+  // send our player initials to the snake server
   let setupName = 'Name: ' + globalVars.userName;
   conn.write(setupName);
 
