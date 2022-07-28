@@ -21,7 +21,7 @@ let conColors = {
 
 //
 //  Setup Global Functions
-// ! QUESTION - why can't I set the globalVars in this file from outside this file via these functions?
+// TODO - why can't I set the globalVars in this file from outside this file via these functions?
 // TODO - research classes and .this to solve this
 //
 const setGameStartTime = () => {
@@ -34,8 +34,6 @@ const setGameEndTime = () => {
   const date = new Date();
   return (Math.floor(date.getTime() / 1000));
 };
-
-
 
 module.exports = {
   host,
