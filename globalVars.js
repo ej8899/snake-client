@@ -3,6 +3,7 @@
 //
 const host = "localhost", port = 50541;
 const directionsCounter = 0;
+const consoleLine = '-'.repeat(process.stdout.columns / 2);
 let userName = 'sNk';
 let secondsPlayed = 0;
 let gameStartTimeInSeconds = 0;
@@ -40,6 +41,7 @@ module.exports = {
   port,
   userName,
   directionsCounter,
+  consoleLine,
   secondsPlayed,
   gameStartTimeInSeconds,
   gameEndTimeInSeconds,

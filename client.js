@@ -51,6 +51,7 @@ const connect = function() {
     if (data.search("ded") > 0) { // user is "ded" - lets figure out why
       if (globalVars.directionsCounter === 0) { // user is not actively playing & never started to play
         console.log(`   ${globalVars.conColors.conColorRed}Did you fall asleep with Snek?  You didn't move at all!${globalVars.conColors.conColorReset}`);
+        console.log(globalFns.redLine());
       } else {
         console.log(`             ${globalVars.conColors.conColorRed}* * *  G A M E  O V E R  * * *${globalVars.conColors.conColorReset}`);
         if (data.search("idled") > 0) {  // not playing now, but has been playing
@@ -59,7 +60,6 @@ const connect = function() {
           console.log("                      You CRASHED!\n");
         }
         let secondsplaying = globalVars.setGameEndTime() - globalVars.gameStartTimeInSeconds;
-        
         globalFns.endGameSummary(secondsplaying);
       }
       console.log();

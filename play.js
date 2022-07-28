@@ -1,9 +1,10 @@
 const { connect } = require("./client.js");
 const { setupInput } = require("./input.js");
 const globalVars = require("./globalVars.js");
-
+const globalFns = require("./globalfn.js");
 
 console.clear();
+console.log(globalFns.redLine());
 console.log(globalVars.conColors.conColorDim + " Welcome to..." + globalVars.conColors.conColorReset + globalVars.conColors.conColorGreen);
 console.log(`      _______..__   __.     ___      __  ___  _______   ${globalVars.conColors.conColorRed}__${globalVars.conColors.conColorGreen}  `);
 console.log(`     /       ||  \\ |  |    /   \\    |  |/  / |   ____| ${globalVars.conColors.conColorRed}|  |${globalVars.conColors.conColorGreen} `);
