@@ -9,14 +9,19 @@ const setupInput = function (conn) {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   connection = conn;
+  
+  let movementInterval = setInterval(function() {  }, 1); // just initialize with empty function
+  let snakeSpeed = 200;  // this is in milliseconds
+
   stdin.on('data', function handleUserInput(keyPress) {
     
     // SYNC movement counting to our global variables
     globalVars.directionsCounter = directionChanges;
-
+    
     //
     // MOVEMENT and MAIN CONTROL 
     //
+    
     if (keyPress === '\u0003' || keyPress === '\u0078') { // ctrl-c or x to exit
       console.log("later!");
       console.log("You changed direction " + directionChanges + " times!");
@@ -25,20 +30,24 @@ const setupInput = function (conn) {
       console.log("You lasted " + secondsplaying + " seconds!");
       process.exit();
     }
-    if (keyPress === '\u0061' ) {  // 'a'  
-      conn.write('Move: left');
+    if (keyPress === '\u0061' ) {  // 'a'
+      clearInterval(movementInterval);  // new keypress, so clear prior movement interval
+      movementInterval = setInterval(function() { conn.write('Move: left'); }, snakeSpeed);
       directionChanges++;
     }
     if (keyPress === '\u0077') {  // 'w'
-      conn.write('Move: up');
+      clearInterval(movementInterval);  // new keypress, so clear prior movement interval
+      movementInterval = setInterval(function() { conn.write('Move: up'); }, snakeSpeed);
       directionChanges++;
     }
     if (keyPress === '\u0073') {  // 's'
-      conn.write('Move: down');
+      clearInterval(movementInterval);  // new keypress, so clear prior movement interval
+      movementInterval = setInterval(function() { conn.write('Move: down'); }, snakeSpeed);
       directionChanges++;
     }
     if (keyPress === '\u0064') {  // 'd'
-      conn.write('Move: right');
+      clearInterval(movementInterval);  // new keypress, so clear prior movement interval
+      movementInterval = setInterval(function() { conn.write('Move: right'); }, snakeSpeed);
       directionChanges++;
     }
 

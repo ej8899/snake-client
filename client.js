@@ -13,7 +13,12 @@ const connect = function () {
     host: "localhost",
     port: 50541
   });
-
+  conn.on('error', (errorCode) => {
+    console.log(`${globalVars.conColors.conColorRed}  GAME START ERROR: ${globalVars.conColors.conColorCyan}${errorCode}${globalVars.conColors.conColorReset}`);
+    console.log(`${globalVars.conColors.conColorDim}     (did you forget to start the game server, perhaps?)\n${globalVars.conColors.conColorReset}`)
+    process.exit();
+   });
+  
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
