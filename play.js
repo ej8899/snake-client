@@ -1,3 +1,10 @@
+//
+// LHL - Snake Game CLIENT (with server mods)
+// https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m02w5/activities/1193?journey_step=34&workbook=8
+// 2022-07-28 - v1.0
+//
+
+
 const { connect } = require("./client.js");
 const { setupInput } = require("./input.js");
 const globalVars = require("./globalVars.js");
