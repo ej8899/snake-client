@@ -19,16 +19,16 @@ Before you can run this client, you will need to be running the server side whic
 
 - Follow steps inside the snek server repo to run the server side.  The modified snek server is required to receive "group messages" when new players join the game, but otherwise is not necessary.
 - Run the development snake client using the `node play.js` command.
-The modified server files included here runs via `node play.js` as well.
-And you may need to update the server and port information in the client side `globalVars.js` file too.
+- The modified server files included here runs via `node play.js` as well.
+- And you may need to update the server hostname (or IP) and port information in the client side `globalVars.js` file too once you get that info from the snake server.
 
 
-## Bonus features:
+## Bonus features added:
 - added connection error "pretty" exit instead of a harsh failure notification
 - "score" counter (seconds survived)
 - "score" counter (number of direction changes made)
 - fancy intro with ASCII art
 - trap generic server game over messages & re-phrase
-- automatic snake movement after first keypress - no stopping it now!
+- automatic snake movement (via client side) after first keypress - no stopping it now!
 - every time you change snake's direction, it gets faster!
 - stretch feature: receive notfication if others join the game
