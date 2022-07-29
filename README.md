@@ -18,7 +18,9 @@ Before you can run this client, you will need to be running the server side whic
 ## Getting Started:
 
 - Follow steps inside the snek server repo to run the server side.  The modified snek server is required to receive "group messages" when new players join the game, but otherwise is not necessary.
-- Run the development snake client using the `node play.js` command. The modified server files included here runs via `node play.js` as well.
+- Run the development snake client using the `node play.js` command.
+The modified server files included here runs via `node play.js` as well.
+And you may need to update the server and port information in the client side `globalVars.js` file too.
 
 
 ## Bonus features:
