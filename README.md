@@ -9,7 +9,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product:
 
-![Snake Client - main interface](./images-snakemain.png)
+![Snake Client - main interface](./images-snakemain.jpg)
 
 ![Snake at play](./images-snakeplay.png)
 
