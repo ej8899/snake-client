@@ -32,3 +32,8 @@ Before you can run this client, you will need to be running the server side whic
 - automatic snake movement (via client side) after first keypress - no stopping it now!
 - every time you change snake's direction, it gets faster!
 - stretch feature: receive notfication if others join the game
+
+## Future Ideas:
+- [ ] error check any missing "requires" and provide clean exit if missing
+- [ ] report final snake speed at game over
+- [ ] modify server to report 'food eaten' to add to final scoring
